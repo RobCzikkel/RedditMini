@@ -45,6 +45,7 @@ main {
     width: 100px;
     background-color: #ff4500;
     font-size: 1em;
+    font-weight: bolder;
     color: white;
     border-radius: 10px;
     font-family: 'Encode Sans SC', sans-serif;
@@ -203,9 +204,14 @@ article {
     align-items: center;
 }
 
-/* .comments h5 {
-    /* margin: 0.2em; */
-} */
+.comments h5 {
+    font-size: 1.4em;
+    margin: 0.2em;
+}
+
+.comments small {
+    font-size: 1em;
+}
 
 .comments i {
     font-size: 1.2em;
@@ -260,4 +266,18 @@ article {
 
 .downvoted {
     color:rgb(250, 3, 188)
+}
+
+.skeleton {
+    width: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skel-item {
+    margin: 1em auto;
+    width: 90%;
 }

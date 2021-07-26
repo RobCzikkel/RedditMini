@@ -1,9 +1,27 @@
 import React from 'react';
 import { DateTime } from "luxon";
+import Skeleton from '@material-ui/lab/Skeleton';
+import { commentsLoading } from './commentSlice'
+import { useSelector } from 'react-redux';
 
 function Comments(props) {
 
     const { comments } = props;
+    const isLoading = useSelector(commentsLoading)
+
+    if (isLoading) {
+        return (
+            <>
+            {Array(5).fill(
+                <div className="comment">
+                    <Skeleton amination="wave" variant="text" height={50}/>
+                </div>
+            )}
+            
+            </>
+
+        )
+    }
 
     if (comments) {
         return (

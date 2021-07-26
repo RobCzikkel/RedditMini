@@ -1,14 +1,17 @@
 import React, { useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchComments, setPermaLink, setId } from '../features/comments/commentSlice';
 import Comments from '../features/comments/comments';
 import { setVisible, upVote, downVote } from '../features/redditHome/redditSlice'
 import { DateTime } from "luxon";
 import { setSub } from '../features/redditHome/redditSlice';
 
+
 export default function Post(props) {
 
     const [voted, setVoted] = useState('')
+    
+
 
     const { post } = props;
     const dispatch = useDispatch();
@@ -55,6 +58,7 @@ export default function Post(props) {
         dispatch(setSub(post.subreddit_name_prefixed))
     }
 
+
     return (
         <article>
             <div className="top">
@@ -73,7 +77,7 @@ export default function Post(props) {
             <div className="combined">
                 <div className="bottom">
                     <h5><small>posted by</small> {post.author}</h5>
-                    <div onClick={handleClick}  className="comments"><i data-id={post.id} data-link={post.permalink} className="material-icons">chat</i><small>{post.num_comments}</small></div>
+                    <div onClick={handleClick}  className="comments"><small>{post.num_comments}</small><i data-id={post.id} data-link={post.permalink} className="material-icons">chat</i></div>
                 </div>
                 {!post.visible || <Comments comments={props.comments} postId={props.postId} link={props.link}/>}
                 
