@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchComments, setPermaLink, setId } from '../features/comments/commentSlice';
 import Comments from '../features/comments/comments';
 import { setVisible, upVote, downVote } from '../features/redditHome/redditSlice'
