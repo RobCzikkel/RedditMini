@@ -29,7 +29,7 @@ main {
     height: auto;
 }
 .search input {
-    width: 60%;
+    width: 50%;
     height: 50px;
     padding: 0.5em 1em;
     border-radius: 10px;
@@ -280,4 +280,23 @@ article {
 .skel-item {
     margin: 1em auto;
     width: 90%;
+}
+
+@media only screen and (max-width: 1024px) {
+    main{
+        width: 90%;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .stream {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .subs {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+
 }

@@ -72,7 +72,7 @@ export default function Post(props) {
             </div>
             <div className="mid">
                 <p>{post.title}</p>
-                <img src={post.thumbnail} alt=""/>
+                <img src={post.url} alt=""/>
             </div>
             <div className="combined">
                 <div className="bottom">
